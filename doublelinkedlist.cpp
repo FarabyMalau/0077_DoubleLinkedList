@@ -28,13 +28,13 @@ public:
         cin >> nim;
     }
 
-    //Step 1: Allocate memory for new node
-    Node *newNode = new Node ();
+    // Step 1: Allocate memory for new node
+    Node *newNode = new Node();
 
-    //Step 2: Assign value to the data fields
+    // Step 2: Assign value to the data fields
     newNode->noMhs = nim;
 
-    //Step 3: Insert at beginning if list is empty or nim is small
+    // Step 3: Insert at beginning if list is empty or nim is small
     if (START == NULL || nim <= START->noMhs)
     {
         if (START != NULL && nim <= START->noMhs)
@@ -42,28 +42,36 @@ public:
             cout << "\nDuplicate number not allowed" << endl;
             return;
         }
-        //Step 4: newNode.next = START
+        // Step 4: newNode.next = START
         newNode->next = START;
 
-        //Step 5: START.prev = newNode (if START exists)
+        // Step 5: START.prev = newNode (if START exists)
         if (START != NULL)
             START->prev = newNode;
 
-        //Step 6: newNode.prev = NULL
+        // Step 6: newNode.prev = NULL
         newNode->prev = NULL;
 
-        //Step 7: START = newNode
+        // Step 7: START = newNode
         START = newNode;
         return;
     }
 
-    //insert in between node
-    //Step 8: Locate position for insertion
+    // insert in between node
+    // Step 8: Locate position for insertion
     Node *current = START;
-    While (current->next != NULL && current->next->noMhs < nim)
+    While(current->next != NULL && current->next->noMhs < nim)
     {
         current = current->next;
     }
 
-    
+    if (current->next != NULL && nim == current->next->noMhs)
+    {
+        cout << "\nDuplicate roll numbers not allowed" << endl;
+        return;
+    }
+
+    // Step 9: Insert between current and current->next
+    newNode->next = current->next; // Step9a: newNode.next =
+    newNode->prev = current;
 }
