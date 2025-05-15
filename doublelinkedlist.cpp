@@ -95,6 +95,18 @@ public:
         while (current != NULL && current->noMhs != rollNo)
             current = current->next;
 
+        if (current == NULL)
+        {
+            cout << "Record not found" << endl;
+            return;
+        }
+
+        // Step 2: if node is at the beginning
+        if (current == START)
+        {
+
+        }
+
         
 
     } 
