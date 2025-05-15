@@ -132,7 +132,23 @@ public:
             return;
         }
 
-        
+        // Step 1: Mark fisrt node as currentNode
+        Node *currentNode = START;
+
+        // Step 2: Repeat until currentNode == NULL
+        cout << "\nRecords in ascending order of roll number are:\n";
+        int i = 0;
+        while (currentNode != NULL)
+        {
+
+            cout << i + 1 << ". " << currentNode->noMhs << " " << endl;
+
+            // Step 3: Move to next node
+            currentNode = currentNode->next;
+            i++;
+        }
     }
+
+    
         
 };
