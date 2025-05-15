@@ -104,10 +104,17 @@ public:
         // Step 2: if node is at the beginning
         if (current == START)
         {
+            START = current->next; // step 2a: START = START
+            if (START != NULL)
+                START->prev = NULL; // Step 2b : START.prev =
+                NULL   
+        }
+        else
+        {
+            // Step 3: Link previous node to the next of current
+            current->prev->next = current->next;
 
         }
-
-        
 
     } 
         
