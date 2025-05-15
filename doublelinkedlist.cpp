@@ -132,7 +132,7 @@ public:
             return;
         }
 
-        // Step 1: Mark fisrt node as currentNode
+        // Step 1: Mark first node as currentNode
         Node *currentNode = START;
 
         // Step 2: Repeat until currentNode == NULL
@@ -149,6 +149,11 @@ public:
         }
     }
 
-    
+    void revtraverse()
+    {
+        
+    }
+
+
         
 };
